@@ -1,44 +1,289 @@
-* {
-    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
     margin: 0;
-  }
-  p {
-    margin-bottom: 20px;
-  }
-  .wrapper {
-    width: 80%;
-    margin: auto;
-    overflow:hidden;
-  }
-  header {
-    background: rgba(0,0,0,0.9);
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(rgb(32, 97, 72), rgb(125, 240, 173));
+
+}
+:root{
+    --letra-color: rgb(172, 248, 172);
+    --letra2-color: rgb(58, 73, 62);
+}
+/* ------------------------------ | BARRA DE NAV |------------------------------- */
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    position: fixed;
-    z-index: 10;
-  }
-  
-  nav {
-    float: left; /* Desplazamos el nav hacia la izquierda */
-  }
-  nav ul {
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+header img{
+    width: 250px;
+
+}
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+header ul li{
     list-style: none;
-    overflow: hidden; /* Limpiamos errores de float */
-  }
-  nav ul li {
-    float: left;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-  }
-  nav ul li a {
-    display: block; /* Convertimos los elementos a en elementos bloque para manipular el padding */
-    padding: 20px;
-    color: #fff;
+    margin-left: 20px;
+    
+}
+header ul li a{
     text-decoration: none;
-  }
-  nav ul li:hover {
-    background: #3ead47;
-  }
-  .contenido {
-    padding-top: 80px;
-  }
-  
+    padding: 6px 15px;
+    color: var(--letra-color);
+    font-weight: bold; 
+    border-radius: 20px;
+}
+header ul li a:hover, .active{
+    background: var(--letra-color);
+    color:var(--letra2-color);
+}
+/* ------------------------------ | BANNER |------------------------------- */
+.sec1{
+    position:relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display:flex;
+    justify-content:center;
+    align-items:center; 
+    overflow: hidden;
+}
+.sec1::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, rgb(16, 19, 17), transparent);
+    z-index: 1000;
+}
+.sec1 img{
+    position:absolute;
+    object-fit: contain; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;  
+}
+
+ img#moon{
+    margin: 0;
+    height: 400px;
+    z-index: 9;
+}
+
+.sec1 img#mf{
+    margin: 100px 0px 0px;
+    object-fit: cover;
+    z-index: 10;
+
+}
+#rympn{ 
+    
+    position: relative;
+    top: 8em;
+    left: -30em;
+    height: 300px;  
+    z-index: 12;
+    
+}
+#text{
+    justify-content: center;
+    position: absolute;
+    right: -1000px;
+    color: var(--letra-color);
+    white-space: nowrap;
+    font-size: 7.5vw;
+    z-index: 9;
+}
+#btn{
+    text-decoration: none;
+    display: inline-block;
+    
+    padding: 8px 30px;
+    border-radius: 100%;
+    background: var(--letra2-color);
+    color: var(--letra-color);
+    font-size: 1.5em;
+    transform: translateX(500px);
+    z-index: 11;
+}
+/* ------------------------------ | SEC: creadores-sinopsis |------------------------------- */
+main{
+    background-color: rgb(16, 19, 17);
+}
+main img{
+    display: flex;
+
+}
+main h1{
+    background-color: rgb(16, 19, 17, 0.24);
+    display: flex;
+    padding: 100px 0px 0px 0px;
+    justify-content: center;
+    align-items: center;
+}
+.sec2{
+    
+    box-shadow: 1px 5px 25px rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    text-align: justify;
+    
+    padding: 20px 10px;   
+    margin: 30px auto ;         
+    width: 1160px;
+}
+
+.sec3{
+   
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.info{
+    border-radius: 5px;
+    text-align: justify;
+    font-size: 15px;
+    width: 800px;
+    background: var(--letra-color);
+    margin: auto 50px;
+    padding: 40px 40px;
+    box-shadow: 3px 3px 7px var(--letra2-color);
+}
+
+.creador {
+    margin: 10px;
+    text-align: center;
+    padding: 1rem;
+    
+    
+}
+
+.creador img{
+ 
+    background-image: var(--letra-color);
+    border-radius: 50%;
+    float: left;
+    margin-right: 20px;
+    max-width: 150px;
+    width: 100%;
+    margin-bottom: 20px;
+    
+}
+.creador h3{
+    font-size: 20px;
+    font-weight: 500;
+    color: #222;
+    letter-spacing: 5px;
+    cursor: pointer;
+    padding-top: 40px;
+}
+
+h3:hover {
+    color: var(--letra-color);
+    text-shadow: 0 0 10px var(--letra-color),
+    0 0 20px var(--letra-color),
+    0 0 40px var(--letra-color),
+    0 0 80px var(--letra-color),
+    0 0 120px var(--letra-color),
+    0 0 160px var(--letra-color);
+}
+.creador img:hover{
+    transform: scale(1.6);
+    transition-duration: 3s;
+}
+.sec2 h4{
+    font-size: 1.2 em;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font: bolder;
+    color: var(--letra2-color);  
+}
+.sec2 p{
+    
+    font-size: 1em;
+    color: var(--letra2-color);
+}
+h1{
+    color: var(--letra-color);
+}
+/* ------------------------------ | PERSONAJES |------------------------------- */
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    background: linear-gradient( rgb(32, 97, 72), rgb(125, 240, 173));
+    position: relative;
+    width: 600px;
+    height: 350px;
+    margin: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+.card img{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 200px;
+}
+.card:hover img{
+    left: 73%;
+    height: 300px;
+}
+.content{
+    position: relative;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+.card:hover .content{
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+
+}
+.content h2{
+    color: rgb(198, 248, 198);
+    text-transform: uppercase;
+    font-size: 2.2em;
+    line-height: 1em;
+    padding-bottom: 10px ;
+}
+.content p{
+    color: rgb(211, 255, 211);
+    font-size: 0.8em;
+
+}
+footer{
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+    
+}
